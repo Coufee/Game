@@ -2,8 +2,8 @@ package main
 
 import (
 	"sync"
-	l4g "test/tool/log4go"
-	"test/tool/zebra"
+	l4g "tool/log4go"
+	"tool/zebra"
 )
 
 type ClientServer struct {

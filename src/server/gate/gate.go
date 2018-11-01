@@ -7,14 +7,13 @@ import (
 	"syscall"
 	"time"
 
-	"test/tool/common"
-	l4g "test/tool/log4go"
-	"test/tool/zebra"
+	"tool/common"
+	l4g "tool/log4go"
+	"tool/zebra"
 
-	"github.com/name5566/leaf/log"
 	//"io/ioutil"
+	_ "os"
 	"path/filepath"
-	_"os"
 )
 
 var g_config = new(xmlConfig)
@@ -22,7 +21,8 @@ var g_config = new(xmlConfig)
 func main() {
 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err != nil {
-		log.Fatal("%v", err)
+		l4g.Fine("%v", err)
+		//l4g.Fatal("%v", err)
 	}
 	fmt.Println(dir)
 
@@ -30,7 +30,7 @@ func main() {
 	// 	fmt.Println("Please input ", os.Args[0], "config file")
 	// }
 
-	dirs:="server.xml"
+	dirs := "server.xml"
 	if err := common.LoadConfig(dirs, g_config); err != nil {
 		panic(fmt.Sprintf("load config %v fail %v", os.Args[1], err))
 	}

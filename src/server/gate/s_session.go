@@ -4,7 +4,7 @@ import (
 	"sync"
 
 	_ "github.com/golang/protobuf/proto"
-	"test/tool/zebra"
+	"tool/zebra"
 )
 
 const s_broadcast_info_size = 65536

@@ -2,8 +2,8 @@ package main
 
 import (
 	"runtime"
-	l4g "test/tool/log4go"
 	"time"
+	l4g "tool/log4go"
 )
 
 type TenSecondTimer struct{}

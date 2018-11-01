@@ -2,7 +2,7 @@ package main
 
 import (
 	"sync"
-	"test/tool/zebra"
+	"tool/zebra"
 )
 
 type SServer struct {

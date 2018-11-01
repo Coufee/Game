@@ -4,8 +4,8 @@ import (
 	"container/list"
 	"fmt"
 	"sync"
-	"test/tool/zebra"
 	"time"
+	"tool/zebra"
 )
 
 type Thread struct {

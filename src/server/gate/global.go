@@ -4,7 +4,7 @@ import (
 	"os"
 	"sync/atomic"
 
-	"test/tool/common"
+	"tool/common"
 )
 
 var g_ss *SServer = &SServer{
