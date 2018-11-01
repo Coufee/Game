@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/golang/protobuf/proto"
-	l4g "test/tool/log4go"
+	l4g "tool/log4go"
 )
 
 type Sessioner interface {

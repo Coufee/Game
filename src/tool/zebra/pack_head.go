@@ -1,7 +1,7 @@
 package zebra
 
 import (
-	l4g "test/tool/log4go"
+	l4g "tool/log4go"
 )
 
 type PackHead struct {
@@ -11,6 +11,7 @@ type PackHead struct {
 	Sid    uint32
 }
 
+//解密消息头
 func DecodePackHead(buf []byte, ph *PackHead) bool {
 	if len(buf) < 16 {
 		l4g.Error("[PackHead] decode size no enough size:%v", len(buf))
@@ -24,6 +25,7 @@ func DecodePackHead(buf []byte, ph *PackHead) bool {
 	return true
 }
 
+//加密消息头
 func EncodePackHead(buf []byte, ph *PackHead) bool {
 	if len(buf) < 16 {
 		l4g.Error("[PackHead] encode size no enough size:%v", len(buf))

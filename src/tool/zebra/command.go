@@ -1,7 +1,7 @@
 package zebra
 
 import (
-	l4g "test/tool/log4go"
+	l4g "tool/log4go"
 )
 
 type Command interface {
@@ -18,10 +18,12 @@ func NewCommandM() *CommandM {
 	}
 }
 
+//注册协议
 func (this *CommandM) Register(id uint32, cmd Command) {
 	this.cmdm[id] = cmd
 }
 
+//分发协议
 func (this *CommandM) Dispatcher(session Sessioner, ph *PackHead, data []byte) bool {
 	if cmd, exist := this.cmdm[ph.Cmd]; exist {
 		return cmd.Excute(session, ph, data)
